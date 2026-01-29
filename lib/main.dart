@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         ),
         backgroundColor: Colors.black26,
         body: Center(
-          child: Column(mainAxisAlignment: MainAxisAlignment.end,
+          child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                 NegationButton(),
@@ -41,6 +41,38 @@ class MyApp extends StatelessWidget {
                 SolveButton(),
                 ], 
             ),
+            Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                    OneButton(),
+                    TwoButton(),
+                    ThreeButton(),
+                    PlusButton(),
+                ],
+                ),
+                Row( mainAxisAlignment: MainAxisAlignment. spaceEvenly,
+                children:[
+                    FourButton(),
+                    FiveButton(),
+                    SixButton(),
+                    MinusButton()
+                ]
+                ),
+                Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                    SevenButton(),
+                    EightButton(),
+                    NineButton(),
+                    MultiplicationButton(),
+                ],
+                ),
+                Row( mainAxisAlignment: MainAxisAlignment. spaceEvenly,
+                children: [
+                    ClearButton(),
+                    PercentageButton(),
+                    DivisionButton(),
+                    BackSpaceButton(),
+                ]
+                ),
             ],
           ),
         ),
