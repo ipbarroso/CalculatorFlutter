@@ -7,11 +7,13 @@ void main(){
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+   MyApp({super.key});
+
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           actions: [
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
             )
           ],
           backgroundColor: Colors.white30,
-          title: Text(
+          title: const Text(
             "Calculator",
             style: TextStyle(
               color: Colors.orange,
@@ -31,54 +33,40 @@ class MyApp extends StatelessWidget {
           ),
         ),
         backgroundColor: Colors.black26,
-        body: Center(
-          child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                NegationButton(),
-                ZeroButton(),
-                DotButton(),
-                SolveButton(),
-                ], 
+        body: Column(
+          children: [
+            const InputBar(), 
+            Expanded(
+              child: FractionallySizedBox(
+                heightFactor: 0.75,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: mathButtons.map((row) {
+                    return Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: row,
+                    );
+                  }).toList(),
+                ),
+              ),
             ),
-            Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                    OneButton(),
-                    TwoButton(),
-                    ThreeButton(),
-                    PlusButton(),
-                ],
-                ),
-                Row( mainAxisAlignment: MainAxisAlignment. spaceEvenly,
-                children:[
-                    FourButton(),
-                    FiveButton(),
-                    SixButton(),
-                    MinusButton()
-                ]
-                ),
-                Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                    SevenButton(),
-                    EightButton(),
-                    NineButton(),
-                    MultiplicationButton(),
-                ],
-                ),
-                Row( mainAxisAlignment: MainAxisAlignment. spaceEvenly,
-                children: [
-                    ClearButton(),
-                    PercentageButton(),
-                    DivisionButton(),
-                    BackSpaceButton(),
-                ]
-                ),
-            ],
-          ),
+          ],
         ),
-        
       ),
+    );
+  }
+}
 
+
+class InputBar extends StatelessWidget {
+  const InputBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 120,
+      color: Colors.white,
+      alignment: Alignment.center,
     );
   }
 }

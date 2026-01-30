@@ -1,258 +1,67 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class PlusButton extends StatelessWidget {
-    const PlusButton({super.key});
+class CalcButton extends StatelessWidget {
+    final String label;
+    final VoidCallback onPressed;
+
+    const CalcButton({super.key, required this.label, required this.onPressed});
 
 @override
 Widget build(BuildContext context){
     return CupertinoButton.filled(
-        onPressed: () {},
-        child: Text('+')
-        );
-    }
-}
-
-class MinusButton extends StatelessWidget {
-    const MinusButton({super.key});
-
-@override
-Widget build(BuildContext context){
-    return CupertinoButton.filled(
-        onPressed: () {},
-        child: Text('-')
-        );
-    }
-}
-
-class MultiplicationButton extends StatelessWidget {
-    const MultiplicationButton({super.key});
-
-@override
-Widget build(BuildContext context){
-    return CupertinoButton.filled(
-        onPressed: () {},
-        child: Text('x')
-        );
-    }
-}
-
-class DivisionButton extends StatelessWidget {
-    const DivisionButton({super.key});
-
-@override
-Widget build(BuildContext context){
-    return CupertinoButton.filled(
-        onPressed: () {},
-        child: Text('/')
-        );
-    }
-}
-
-class SolveButton extends StatelessWidget {
-    const SolveButton({super.key});
-
-@override
-Widget build(BuildContext context){
-    return CupertinoButton.filled(
-        onPressed: () {},
-        child: Text('=')
-        );
-    }
-}
-
-class ClearButton extends StatelessWidget {
-    const ClearButton({super.key});
-
-@override
-Widget build(BuildContext context){
-    return CupertinoButton.filled(
-        onPressed: () {},
-        child: Text('AC')
-        );
+        padding: EdgeInsets.all(30),
+        borderRadius: BorderRadius.circular(50),
+        onPressed: onPressed, 
+        child: Text(
+          label, 
+          style: const TextStyle(fontSize: 24),
+        ),
+      );
     }
 }
 
 
-class PercentageButton extends StatelessWidget {
-    const PercentageButton({super.key});
+final List<List<CalcButton>> mathButtons = [
 
-@override
-Widget build(BuildContext context){
-    return CupertinoButton.filled(
-        onPressed: () {},
-        child: Text('%')
-        );
-    }
-}
+      //row 1
+      [
+      CalcButton(label: '<-', onPressed: (){}),
+      CalcButton(label: 'AC', onPressed: (){}),
+      CalcButton(label: '%', onPressed: (){}),
+      CalcButton(label: '/', onPressed: (){}),
+      ],
+      
+      //row 2
+      [
+      CalcButton(label: '7', onPressed: (){}),
+      CalcButton(label: '8', onPressed: (){}),
+      CalcButton(label: '9', onPressed: (){}),
+      CalcButton(label: 'x', onPressed: (){}),
+      ],
+      
+      //row 3
+      [
+      CalcButton(label: '4', onPressed: (){}),
+      CalcButton(label: '5', onPressed: (){}),
+      CalcButton(label: '6', onPressed: (){}),
+      CalcButton(label: '-', onPressed: (){}),
+      ],
 
+      //row 4
+      [
+      CalcButton(label: '1', onPressed: (){}),
+      CalcButton(label: '2', onPressed: (){}),
+      CalcButton(label: '3', onPressed: (){}),
+      CalcButton(label: '+', onPressed: (){}),
+      ],
 
-class PointButton extends StatelessWidget {
-    const PointButton({super.key});
-
-@override
-Widget build(BuildContext context){
-    return CupertinoButton.filled(
-        onPressed: () {},
-        child: Text('.')
-        );
-    }
-}
-
-class ZeroButton extends StatelessWidget {
-    const ZeroButton({super.key});
-
-@override
-Widget build(BuildContext context){
-    return CupertinoButton.filled(
-        onPressed: () {},
-        child: Text('0')
-        );
-    }
-}
-
-class DotButton extends StatelessWidget {
-    const DotButton({super.key});
-
-@override
-Widget build(BuildContext context){
-    return CupertinoButton.filled(
-        onPressed: () {},
-        child: Text('.')
-        );
-    }
-}
-
-class NegationButton extends StatelessWidget {
-    const NegationButton({super.key});
-
-@override
-Widget build(BuildContext context){
-    return CupertinoButton.filled(
-        onPressed: () {},
-        child: Text('+/-')
-        );
-    }
-}
-
-class OneButton extends StatelessWidget {
-    const OneButton({super.key});
-
-@override
-Widget build(BuildContext context){
-    return CupertinoButton.filled(
-        onPressed: () {},
-        child: Text('1')
-        );
-    }
-}
-
-class TwoButton extends StatelessWidget {
-    const TwoButton({super.key});
-
-@override
-Widget build(BuildContext context){
-    return CupertinoButton.filled(
-        onPressed: () {},
-        child: Text('2')
-        );
-    }
-}
-
-class ThreeButton extends StatelessWidget {
-    const ThreeButton({super.key});
-
-@override
-Widget build(BuildContext context){
-    return CupertinoButton.filled(
-        onPressed: () {},
-        child: Text('3')
-        );
-    }
-}
-
-class FourButton extends StatelessWidget {
-    const FourButton({super.key});
-
-@override
-Widget build(BuildContext context){
-    return CupertinoButton.filled(
-        onPressed: () {},
-        child: Text('4')
-        );
-    }
-}
-
-class FiveButton extends StatelessWidget {
-    const FiveButton({super.key});
-
-@override
-Widget build(BuildContext context){
-    return CupertinoButton.filled(
-        onPressed: () {},
-        child: Text('5')
-        );
-    }
-}
-
-class SixButton extends StatelessWidget {
-    const SixButton({super.key});
-
-@override
-Widget build(BuildContext context){
-    return CupertinoButton.filled(
-        onPressed: () {},
-        child: Text('6')
-        );
-    }
-}
-
-class SevenButton extends StatelessWidget {
-    const SevenButton({super.key});
-
-@override
-Widget build(BuildContext context){
-    return CupertinoButton.filled(
-        onPressed: () {},
-        child: Text('7')
-        );
-    }
-}
-
-class EightButton extends StatelessWidget {
-    const EightButton({super.key});
-
-@override
-Widget build(BuildContext context){
-    return CupertinoButton.filled(
-        onPressed: () {},
-        child: Text('8')
-        );
-    }
-}
-
-class NineButton extends StatelessWidget {
-    const NineButton({super.key});
-
-@override
-Widget build(BuildContext context){
-    return CupertinoButton.filled(
-        onPressed: () {},
-        child: Text('9')
-        );
-    }
-}
-
-
-class BackSpaceButton extends StatelessWidget {
-    const BackSpaceButton({super.key});
-
-@override
-Widget build(BuildContext context){
-    return CupertinoButton.filled(
-        onPressed: () {},
-        child: Text('<-')
-        );
-    }
-}
+      //ROW 5
+      [
+      CalcButton(label: '+/-', onPressed: (){}), 
+      CalcButton(label: '0', onPressed: (){}),
+      CalcButton(label: '.', onPressed: (){}),
+      CalcButton(label: '=', onPressed: (){}),
+      ],
+      ];
         
